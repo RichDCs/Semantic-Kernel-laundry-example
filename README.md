@@ -6,7 +6,7 @@ The goal of this example is to use the AI model to decide whether it's a good ti
 
 # Explaination
 
-The method starts by creating a Kernel object using the Kernel.CreateBuilder method. The Kernel is a core component of the Semantic Kernel framework that manages the execution of tasks.
+The method starts by creating a Kernel object using the `Kernel.CreateBuilder` method. The Kernel is a core component of the Semantic Kernel framework that manages the execution of tasks.
 
 Next, it loads settings from a file using the `Settings.LoadFromFile` method. These settings include whether to use Azure OpenAI, the model to use, the Azure endpoint, the API key, and the organization ID.
 
