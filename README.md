@@ -15,7 +15,7 @@ The project is built using .NET 8.0, as specified in the [`SK-laundry-example.cs
 
 To get started with this project:
 
-0. Install Semantic Kernal if necessary. `dotnet add package Microsoft.SemanticKernel --version 1.11.1`
+0. Install Semantic Kernel if necessary. `dotnet add package Microsoft.SemanticKernel --version 1.11.1`
 
 1. Clone the repository.
 2. Open the solution file [`SK-laundry-example.sln`](SK-laundry-example.sln) in Visual Studio Code or any IDE of your choice.
