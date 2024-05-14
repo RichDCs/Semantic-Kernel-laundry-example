@@ -45,10 +45,11 @@ namespace AutoFunctionCalling
             return currentWeather.ToString();
         }
 
-        public static void WaitSomeTime()
+        public static async Task WaitSomeTime()
         {
             // simulate a delay
             Console.WriteLine("Waiting some time...");
+            await Task.Delay(2000);
         }
     }
 }

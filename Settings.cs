@@ -20,7 +20,7 @@ public static class Settings
     private const bool StoreConfigOnFile = true;
 
     // Prompt user for Azure Endpoint URL
-    public static async Task<string> AskAzureEndpoint(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
+    public static string LoadAzureEndpoint(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
     {
         var (useAzureOpenAI, model, azureEndpoint, apiKey, orgId) = ReadSettings(_useAzureOpenAI, configFile);
 
@@ -38,7 +38,7 @@ public static class Settings
     }
 
     // Prompt user for OpenAI model name / Azure OpenAI deployment name
-    public static async Task<string> AskModel(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
+    public static string LoadModel(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
     {
         var (useAzureOpenAI, model, azureEndpoint, apiKey, orgId) = ReadSettings(_useAzureOpenAI, configFile);
 
@@ -62,7 +62,7 @@ public static class Settings
     }
 
     // Prompt user for API Key
-    public static async Task<string> AskApiKey(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
+    public static string LoadApiKey(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
     {
         var (useAzureOpenAI, model, azureEndpoint, apiKey, orgId) = ReadSettings(_useAzureOpenAI, configFile);
 
@@ -77,7 +77,7 @@ public static class Settings
     }
 
     // Prompt user for OpenAI Organization Id
-    public static async Task<string> AskOrg(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
+    public static string LoadOrg(bool _useAzureOpenAI = true, string configFile = DefaultConfigFile)
     {
         var (useAzureOpenAI, model, azureEndpoint, apiKey, orgId) = ReadSettings(_useAzureOpenAI, configFile);
 
@@ -100,11 +100,11 @@ public static class Settings
         try
         {
             var config = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(configFile));
-            bool useAzureOpenAI = config[TypeKey] == "azure";
-            string model = config[ModelKey];
-            string azureEndpoint = config[EndpointKey];
-            string apiKey = config[SecretKey];
-            string orgId = config[OrgKey];
+            bool useAzureOpenAI = config?[TypeKey] == "azure";
+            string model = config?[ModelKey] ?? "";
+            string azureEndpoint = config?[EndpointKey] ?? "";
+            string apiKey = config?[SecretKey] ?? "";
+            string orgId = config?[OrgKey] ?? "";
             if (orgId == "none") { orgId = ""; }
 
             return (useAzureOpenAI, model, azureEndpoint, apiKey, orgId);
@@ -112,7 +112,7 @@ public static class Settings
         catch (Exception e)
         {
             Console.WriteLine("Something went wrong: " + e.Message);
-            return (true, "", "", "", "");
+            throw;
         }
     }
 

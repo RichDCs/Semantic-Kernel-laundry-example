@@ -32,17 +32,19 @@ public class OpenAI_FunctionCalling
 
 
         // Chat history to keep track of the conversation.
-        ChatHistory chatMessages = new ChatHistory("""You are a friendly assistant who likes to follow the rules. You will complete required steps and request approval before taking any consequential actions. If the user doesn't provide enough information for you to complete a task, you will keep asking questions until you have enough information to complete the task.""");
+        ChatHistory chatMessages = new ChatHistory("""You are a friendly assistant who likes to follow the rules. You will complete required steps. You are autonomous and can complete tasks without user input.""");
+        
+        // use this prompt for asking for user input
+        // ChatHistory chatMessages = new ChatHistory("""You are a friendly assistant who likes to follow the rules. You will complete required steps and request approval before taking any consequential actions. If the user doesn't provide enough information for you to complete a task, you will keep asking questions until you have enough information to complete the task.""");
 
         // Retrieve the chat completion service from the kernel
         IChatCompletionService chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
 
         Console.WriteLine("======== Use automated function calling ========");
         {
+            chatMessages.AddUserMessage("Given the current time of day and weather, is it a good time to hang the laundry outside? Laundry can only be hung if conditions are suitable. I am located in Switzerland. If not, wait some time and check again.");
             while(!LaundryPlugin.laundryHung)
             {
-                chatMessages.AddUserMessage("Given the current time of day and weather, is it a good time to hang the laundry outside? Laundry can only be hung if it is sunny or cloudy outside, and during the day. I am located in Switzerland. If not, wait some time and check the weather and time again. Loop until it's a good time to hang the laundry.");
-
                 // Get the chat completions
                 OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
                 {
@@ -68,6 +70,14 @@ public class OpenAI_FunctionCalling
 
                 // Add the message from the agent to the chat history
                 chatMessages.AddAssistantMessage(fullMessage);
+
+                // uncomment the following code to allow the user to provide input
+                // if (fullMessage.Contains('?'))
+                // {
+                //     // If the agent asks a question, we need to provide an answer.
+                //     System.Console.Write("User > ");
+                //     chatMessages.AddUserMessage(Console.ReadLine()!);
+                // }
             }
         }
     }

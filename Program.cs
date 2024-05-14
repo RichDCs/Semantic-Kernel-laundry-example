@@ -5,9 +5,9 @@ Console.WriteLine("Is it time to do laundry? Let's ask the AI!");
 Console.WriteLine();
 
 bool useAzureOpenAI = true;
-await Settings.AskAzureEndpoint(useAzureOpenAI);
-await Settings.AskModel(useAzureOpenAI);
-await Settings.AskApiKey(useAzureOpenAI);
+Settings.LoadAzureEndpoint(useAzureOpenAI);
+Settings.LoadModel(useAzureOpenAI);
+Settings.LoadApiKey(useAzureOpenAI);
 Console.WriteLine();
 
 var funCalling = new OpenAI_FunctionCalling();
