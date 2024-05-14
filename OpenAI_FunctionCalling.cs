@@ -30,7 +30,6 @@ public class OpenAI_FunctionCalling
             kernel.CreateFunctionFromMethod(LaundryPlugin.GetCurrentWeather, "GetCurrentWeather", "Retrieves the current weather."),
         ]);
 
-
         // Chat history to keep track of the conversation.
         ChatHistory chatMessages = new ChatHistory("""You are a friendly assistant who likes to follow the rules. You will complete required steps. You are autonomous and can complete tasks without user input.""");
         
