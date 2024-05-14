@@ -24,6 +24,8 @@ There's also commented-out code that allows the user to provide input if the ass
 
 The main entry point of the application is [`Program.cs`](Program.cs), which sets up the necessary settings and initiates the function calling process.
 
+The [`OpenAI_FunctionCalling.cs`](OpenAI_FunctionCalling.cs) file contains the Semantic Kernel initialisation logic (that loads the settings and the laundry plugin) and the main loop that uses the AI model as an orchestrator to execute the necessary functions to complete its goal.
+
 The [`Settings.cs`](Settings.cs) file contains the `Settings` class which is responsible for managing the settings of the application, loading the `settings.json`file containing the Azure endpoint, model, and API key.
 
 The [`LaundryPlugin.cs`](LaundryPlugin.cs) file contains the implementation of the laundry plugin.
