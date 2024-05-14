@@ -1,11 +1,11 @@
-## Semantic Kernel Laundry Example
+# Semantic Kernel Laundry Example
 
 Semantic Kernel automated function calling example to determine the right time to hang your laundry.
 The goal of this example is to use the AI model to decide whether it's a good time to hang laundry outside based on the current time and weather.
 
 ![Screenshot 1](/SK-laundry-example-screenshot1.png)
 
-# Explaination
+## Explaination
 
 The method starts by creating a Kernel object using the `Kernel.CreateBuilder` method. The Kernel is a core component of the Semantic Kernel framework that manages the execution of tasks.
 
