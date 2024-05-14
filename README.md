@@ -47,7 +47,7 @@ To get started with this project:
 
 ## Models tested
 
-Tested with `gpt-4 turbo-2024-04-09` model hosted on Azure :heart:
+Tested with the `gpt-4 turbo-2024-04-09` model hosted on Azure :heart:
 
 ## Contributing
 
