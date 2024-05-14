@@ -1,6 +1,8 @@
 # SK-laundry-example
 Semantic Kernel automated function calling example to determine the right time to hang your laundry.
 
+![Screenshot 1](/SK-laundry-example-screenshot1.png)
+
 ## Project Structure
 
 The main entry point of the application is [`Program.cs`](Program.cs), which sets up the necessary settings and initiates the function calling process.
