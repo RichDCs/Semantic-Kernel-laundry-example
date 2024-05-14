@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SK-laundry-example", "SK-laundry-example.csproj", "{3113E2DF-BC40-4AE1-AAB6-55DB8DFF41E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3113E2DF-BC40-4AE1-AAB6-55DB8DFF41E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3113E2DF-BC40-4AE1-AAB6-55DB8DFF41E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3113E2DF-BC40-4AE1-AAB6-55DB8DFF41E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3113E2DF-BC40-4AE1-AAB6-55DB8DFF41E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {412FC8CC-D564-4A9D-80EA-CB89C4623FFB}
+	EndGlobalSection
+EndGlobal
