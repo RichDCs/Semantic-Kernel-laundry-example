@@ -42,7 +42,7 @@ public class OpenAI_FunctionCalling
 
         Console.WriteLine("======== Use automated function calling ========");
         {
-            chatMessages.AddUserMessage("Given the current time of day and weather, is it a good time to hang the laundry outside? Laundry can only be hung if conditions are suitable. I am located in Switzerland. If not, wait some time and check again.");
+            chatMessages.AddUserMessage("Given the current time of day and weather, is it a good time to hang the laundry outside? Laundry can only be hung if weather and time conditions are suitable. I am located in Switzerland. If not, wait some time and check again.");
             while(!LaundryPlugin.laundryHung)
             {
                 // Get the chat completions
