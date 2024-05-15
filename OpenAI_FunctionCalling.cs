@@ -26,7 +26,7 @@ public class OpenAI_FunctionCalling
         [
             kernel.CreateFunctionFromMethod(LaundryPlugin.HangLaundry, "HangLaundry", "Hangs the laundry outside."),
             kernel.CreateFunctionFromMethod(LaundryPlugin.GetUtcTime, "GetUtcTime", "Retrieves the current time in UTC."),
-            kernel.CreateFunctionFromMethod(LaundryPlugin.WaitSomeTime, "WaitSomeTime", "Waits some time in order to wait for the current time and weather to change."),
+            kernel.CreateFunctionFromMethod(LaundryPlugin.WaitSomeTime, "WaitSomeTime", "Waits some time in order to wait for the time and weather to change."),
             kernel.CreateFunctionFromMethod(LaundryPlugin.GetCurrentWeather, "GetCurrentWeather", "Retrieves the current weather."),
         ]);
 
