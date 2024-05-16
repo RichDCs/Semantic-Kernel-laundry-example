@@ -47,7 +47,8 @@ public class OpenAI_FunctionCalling
                 // Get the chat completions
                 OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
                 {
-                    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+                    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
+                    FrequencyPenalty = 1.0,
                 };
                 var result = chatCompletionService.GetStreamingChatMessageContentsAsync(
                     chatMessages,
